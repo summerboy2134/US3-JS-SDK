@@ -38,7 +38,6 @@ function UpdateStorageClass() {
         } catch (err) {
             console.error("存储类型更新失败：", err);
             setUpdateStatus("存储类型更新失败");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setUpdateStatus("");
             }, 3000);

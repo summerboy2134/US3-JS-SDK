@@ -35,7 +35,6 @@ function ListObjects() {
                     allObjects = [...allObjects, ...response.Contents];
                 }
 
-                // 如果累积的对象数量已经达到 maxKeys，停止继续查找
                 if (allObjects.length >= maxKeys) {
                     allObjects = allObjects.slice(0, maxKeys);
                     isTruncated = false;

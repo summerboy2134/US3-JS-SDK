@@ -33,14 +33,12 @@ function UploadFile() {
             const response = await s3.send(command);
             console.log("文件上传成功：", response);
             setUploadStatus("文件上传成功!");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setUploadStatus("");
             }, 3000);
         } catch (err) {
             console.error("文件上传失败：", err);
             setUploadStatus("文件上传失败");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setUploadStatus("");
             }, 3000);

@@ -24,14 +24,12 @@ function GetObjectAttr() {
                 ContentType: response.ContentType,
             });
             setStatus("获取对象元数据信息成功!");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setStatus("");
             }, 3000);
         } catch (err) {
             console.error("获取对象元数据信息失败:", err);
             setStatus("获取对象元数据信息失败");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setStatus("");
             }, 3000);

@@ -96,14 +96,12 @@ function MultipartUpload() {
             );
 
             setUploadStatus(`成功上传 ${key} 到 ${bucketName}`);
-            // 设置5秒后清除提示信息
             setTimeout(() => {
                 setUploadStatus("");
             }, 5000);
         } catch (error) {
             console.error("上传文件失败:", error);
             setUploadStatus("上传文件失败");
-            // 设置5秒后清除提示信息
             setTimeout(() => {
                 setUploadStatus("");
             }, 5000);

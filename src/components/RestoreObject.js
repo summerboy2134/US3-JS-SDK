@@ -25,8 +25,7 @@ function RestoreObject() {
             const restoreResponse = await s3.send(restoreCommand);
             console.log("解冻请求发送成功:", restoreResponse);
             setRestoreStatus("解冻请求发送成功!");
-
-            // 延迟检查恢复状态，给恢复过程一点时间
+            // 延迟检查恢复状态
             setTimeout(() => {
                 checkRestorationStatus(bucketName, keyName);
             }, 3000); // 3 秒延迟
@@ -34,7 +33,6 @@ function RestoreObject() {
         } catch (err) {
             console.error("解冻对象出错:", err);
             setRestoreStatus("解冻对象出错");
-            // 设置3秒后清除提示信息
             setTimeout(() => {
                 setRestoreStatus("");
             }, 3000);
@@ -65,7 +63,6 @@ function RestoreObject() {
             setRestoreStatus("检查解冻状态出错");
         }
 
-        // 设置3秒后清除提示信息
         setTimeout(() => {
             setRestoreStatus("");
         }, 3000);
